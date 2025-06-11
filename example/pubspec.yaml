@@ -1,0 +1,15 @@
+name: flutter_tremendous_example
+description: Example app to test flutter_tremendous package
+publish_to: "none"
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_tremendous:
+    path: ../
+
+flutter:
+  uses-material-design: true
