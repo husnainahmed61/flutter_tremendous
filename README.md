@@ -15,7 +15,7 @@ Add this to your `pubspec.yaml` dependencies:
 
 ```
 dependencies:
-  flutter_tremendous:^0.1.1
+  flutter_tremendous:^0.1.3
 ```
 
 ## Installation

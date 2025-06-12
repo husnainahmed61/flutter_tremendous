@@ -32,17 +32,9 @@ class TremendousGift {
     };
 
     final reward = <String, dynamic>{
-      'value': {
-        'denomination': amount,
-        'currency_code': currencyCode,
-      },
-      'delivery': {
-        'method': method,
-      },
-      'recipient': {
-        'name': recipientName,
-        'email': recipientEmail,
-      },
+      'value': {'denomination': amount, 'currency_code': currencyCode},
+      'delivery': {'method': method},
+      'recipient': {'name': recipientName, 'email': recipientEmail},
     };
 
     // Conditionally include campaignId or products
@@ -57,9 +49,7 @@ class TremendousGift {
     }
 
     final body = jsonEncode({
-      'payment': {
-        'funding_source_id': fundingSourceId,
-      },
+      'payment': {'funding_source_id': fundingSourceId},
       'reward': reward,
     });
 
@@ -69,54 +59,9 @@ class TremendousGift {
       return OrderResponse.fromJson(jsonDecode(response.body));
     } else {
       final error = jsonDecode(response.body);
-      final errorMsg = error['errors']?['message'] ?? 'Unexpected error occurred';
+      final errorMsg =
+          error['errors']?['message'] ?? 'Unexpected error occurred';
       throw Exception('Tremendous API Error: $errorMsg');
     }
   }
-
-
-  // Future<OrderResponse> generateVoucher({
-  //   required String fundingSourceId,
-  //   required double amount,
-  //   required String currencyCode,
-  //   required String method,
-  //   required String recipientName,
-  //   required String recipientEmail,
-  //   required String campaignId,
-  // }) async {
-  //   final url = Uri.parse('$_baseUrl/orders');
-  //   final headers = {
-  //     'Authorization': 'Bearer $apiKey',
-  //     'Content-Type': 'application/json',
-  //   };
-  //   final body = jsonEncode({
-  //     'payment': {
-  //       'funding_source_id': fundingSourceId,
-  //     },
-  //     'reward': {
-  //       'value': {
-  //         'denomination': amount,
-  //         'currency_code': currencyCode,
-  //       },
-  //       'delivery': {
-  //         'method': method,
-  //       },
-  //       'recipient': {
-  //         'name': recipientName,
-  //         'email': recipientEmail,
-  //       },
-  //       'campaign_id': campaignId,
-  //     },
-  //   });
-  //
-  //   final response = await http.post(url, headers: headers, body: body);
-  //
-  //   if (response.statusCode == 200 || response.statusCode == 201) {
-  //     return OrderResponse.fromJson(jsonDecode(response.body));
-  //   } else {
-  //     final error = jsonDecode(response.body);
-  //     final errorMsg = error['errors']?['message'] ?? 'Unexpected error occurred';
-  //     throw Exception('Tremendous API Error: $errorMsg');
-  //   }
-  // }
 }
