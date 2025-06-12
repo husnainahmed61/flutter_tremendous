@@ -15,9 +15,7 @@ Add this to your `pubspec.yaml` dependencies:
 
 ```
 dependencies:
-  flutter_tremendous:
-    git:
-      url: https://github.com/husnainahmed61/flutter_tremendous.git
+  flutter_tremendous:^0.1.1
 ```
 
 > Replace with your actual GitHub repo URL.
