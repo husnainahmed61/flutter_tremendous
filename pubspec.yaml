@@ -1,6 +1,6 @@
 name: flutter_tremendous
 description: A Dart package to integrate with the Tremendous Gift API.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/husnainahmed61/flutter_tremendous
 repository: https://github.com/husnainahmed61/flutter_tremendous
 environment:

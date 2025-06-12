@@ -18,8 +18,6 @@ dependencies:
   flutter_tremendous:^0.1.1
 ```
 
-> Replace with your actual GitHub repo URL.
-
 ## Installation
 
 1. Run `flutter pub get` or `dart pub get`
