@@ -27,7 +27,7 @@ class TremendousHomePage extends StatefulWidget {
 
 class _TremendousHomePageState extends State<TremendousHomePage> {
   final _tremendous = TremendousGift(
-    apiKey: 'YOUR API KEY HERE',
+    apiKey: 'YOUR_API_KEY',
     environment: TremendousEnv.sandbox,
   );
 
@@ -40,7 +40,7 @@ class _TremendousHomePageState extends State<TremendousHomePage> {
       final response = await _tremendous.generateVoucher(
         fundingSourceId: 'BALANCE',
         amount: 50.0,
-        currencyCode: 'USD',
+        currencyCode: 'EUR',
         method: 'EMAIL',
         recipientName: 'Jane Doe',
         recipientEmail: 'husnainahmed61@gmail.com',
